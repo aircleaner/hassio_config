@@ -13,3 +13,32 @@ tts:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret rocky_ip
+    token: !secret rocky_token
+
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433XL_DO3RWCC9-if00-port0
+  debug: true
+  
+sensor:
+  platform: rfxtrx
+  automatic_add: true
+  
+switch:
+  platform: rfxtrx
+  automatic_add: true
+  signal_repetitions: 2
+  devices:
+    0710010e41010050:
+      name: Bil1
+    0b11000000a4f18601040f40:
+      name: BilInomhus
+    0b110015008d2f9601010f40:
+      name: remote_1
+    0b110016008d2f9602010f40:
+      name: remote_2
+    0b110019008d2f9603010f40:
+      name: remote_3
