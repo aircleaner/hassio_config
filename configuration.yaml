@@ -26,6 +26,13 @@ rfxtrx:
 sensor:
   platform: rfxtrx
   automatic_add: true
+  devices:
+    0a520200860100d8290049:
+      name: Ute
+    0a520201b60200d8290059:
+      name: Inne
+    0a520202ea0300db280049:
+      name: Garaget
   
 switch:
   platform: rfxtrx
