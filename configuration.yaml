@@ -49,3 +49,6 @@ switch:
       name: remote_2
     0b110019008d2f9603010f40:
       name: remote_3
+    0b1100c1003309a20a000050 :
+      name: ljussensor
+
