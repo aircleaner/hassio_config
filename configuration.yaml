@@ -60,6 +60,7 @@ switch:
       name: Hall
     0b1100c1003309a20a000050:
       name: ljussensor
+      fire_event: true
     0b110035007728de01010f50:
       name: 1203_1
     0b11008d007728de02010f50:

@@ -1,1 +1,25 @@
-[]
+# Automations
+
+- id: 'twilight_on'
+  alias: Ljussensor
+  description: ''
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data: {"entity_id": "switch.ljussensor", "state": "on"}
+    #platform: state
+    #to: 'on'
+  action: 
+    service: switch.turn_on
+    entity_id: group.twilight
+
+- id: 'twilight_off'
+  alias: Ljussensor
+  description: ''
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data: {"entity_id": "switch.ljussensor", "state": "off"}
+  action: 
+    service: switch.turn_off
+    entity_id: group.twilight
