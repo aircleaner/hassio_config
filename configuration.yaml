@@ -29,10 +29,19 @@ sensor:
   devices:
     0a520200860100d8290049:
       name: Ute
+      data_type:
+       - Humidity
+       - Temperature
     0a520201b60200d8290059:
       name: Inne
+      data_type:
+       - Humidity
+       - Temperature
     0a520202ea0300db280049:
       name: Garaget
+      data_type:
+       - Humidity
+       - Temperature
   
 switch:
   platform: rfxtrx
@@ -40,15 +49,20 @@ switch:
   signal_repetitions: 2
   devices:
     0710010e41010050:
-      name: Bil1
+      name: Bil
     0b11000000a4f18601040f40:
-      name: BilInomhus
+      name: Bil_bad
     0b110015008d2f9601010f40:
-      name: remote_1
+      name: Fönsterlampor
     0b110016008d2f9602010f40:
-      name: remote_2
+      name: Sovrum
     0b110019008d2f9603010f40:
-      name: remote_3
-    0b1100c1003309a20a000050 :
+      name: Hall
+    0b1100c1003309a20a000050:
       name: ljussensor
-
+    0b110035007728de01010f50:
+      name: 1203_1
+    0b11008d007728de02010f50:
+      name: 1203_2
+    0b110090007728de03010f50:
+      name: 1203_3
