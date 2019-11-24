@@ -68,8 +68,8 @@ switch:
     0b110090007728de03010f50:
       name: 1203_3
     0b11003a008c700a01030050:
-      name: ute1
+      name: ute_träd
     0b110041008c700a02000050:
-      name: ute2
+      name: uterum
     0b110059008c700a03010f50:
-      name: ute3
+      name: ute_framsidan
