@@ -1,6 +1,18 @@
-  twilight:
+indoor_lights:
+  name: Inomhuslampor
+  entities:
+    - switch.sovrum
+    - switch.hall
+    - switch.fonsterlampor
+  
+twilight:
+  name: Ljussensor
+  entities:
     - switch.hall
     - switch.fonsterlampor
     - switch.12031
     - switch.12032
     - switch.12033
+    - switch.ute1
+    - switch.ute2
+    - switch.ute3
