@@ -39,7 +39,7 @@ rfxtrx:
   
 sensor:
   platform: rfxtrx
-  automatic_add: true
+  automatic_add: false
   devices:
     0a520200860100d8290049:
       name: Ute
@@ -59,7 +59,7 @@ sensor:
   
 switch:
   platform: rfxtrx
-  automatic_add: true
+  automatic_add: false
   signal_repetitions: 2
   devices:
     0710010e41010050:
