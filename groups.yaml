@@ -17,6 +17,13 @@ twilight:
     - switch.ute_trad
     - switch.ute_framsidan
     
+outdoor:
+  name: Utebelysning
+  entities:
+    - switch.uterum
+    - switch.ute_trad
+    - switch.ute_framsidan
+    
 vacuum:
     name: Vacuum a room
     entities:
