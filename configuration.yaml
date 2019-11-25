@@ -16,8 +16,22 @@ script: !include scripts.yaml
 
 vacuum:
   - platform: xiaomi_miio
+    name: Rocky
     host: !secret rocky_ip
     token: !secret rocky_token
+    
+input_select:
+  vacuum_room_select:
+    name: "Välj ett rum att dammsuga"
+    options:
+      - Köket
+      - Hallen
+      - Korridoren
+      - Vardagsrummet
+      - Sovrummet
+      - Majas
+      - Filips
+      - Hela
 
 rfxtrx:
   device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433XL_DO3RWCC9-if00-port0

@@ -16,3 +16,9 @@ twilight:
     - switch.uterum
     - switch.ute_trad
     - switch.ute_framsidan
+    
+vacuum:
+    name: Vacuum a room
+    entities:
+      - input_select.vacuum_room_select
+      - script.vacuum_room
