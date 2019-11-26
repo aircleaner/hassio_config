@@ -1,7 +1,7 @@
 indoor_lights:
   name: Inomhuslampor
   entities:
-    - switch.sovrum
+    #- switch.sovrum
     - switch.hall
     - switch.fonsterlampor
   
