@@ -23,3 +23,31 @@
   action: 
     service: switch.turn_off
     entity_id: group.twilight
+
+- alias: Dammsug hela huset
+  trigger:
+    - platform: time
+      at: '10:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - wed
+        - fri
+  action:
+    - service: vacuum.start
+    
+- alias: Dammsug hallen
+  trigger:
+    - platform: time
+      at: '9:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: script.vacuum_hall
