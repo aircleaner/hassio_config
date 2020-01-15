@@ -10,12 +10,22 @@ twilight:
   entities:
     - switch.hall
     - switch.fonsterlampor
-    - switch.12031
-    - switch.12032
-    - switch.12033
     - switch.uterum
     - switch.ute_trad
     - switch.ute_framsidan
+    
+      
+twilight_off:
+  name: Ljussensor av 
+  entities:
+    - group.twilight
+    - switch.majas_fonsterlampa
+    - switch.sovrum
+      
+twilight_on:
+  name: Ljussensor på
+  entities:
+    - group.twilight
     
 outdoor:
   name: Utebelysning

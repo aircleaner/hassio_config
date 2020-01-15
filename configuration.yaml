@@ -76,7 +76,7 @@ switch:
       name: ljussensor
       fire_event: true
     0b110035007728de01010f50:
-      name: 1203_1
+      name: Majas Fönsterlampa
     0b11008d007728de02010f50:
       name: 1203_2
     0b110090007728de03010f50:

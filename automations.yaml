@@ -11,7 +11,7 @@
     #to: 'on'
   action: 
     service: switch.turn_on
-    entity_id: group.twilight
+    entity_id: group.twilight_on
 
 - id: 'twilight_off'
   alias: Ljussensor
@@ -22,7 +22,7 @@
     event_data: {"entity_id": "switch.ljussensor", "state": "off"}
   action: 
     service: switch.turn_off
-    entity_id: group.twilight
+    entity_id: group.twilight_off
 
 - alias: Dammsug hela huset
   trigger:
@@ -40,7 +40,7 @@
 - alias: Dammsug hallen
   trigger:
     - platform: time
-      at: '9:30:00'
+      at: '13:30:00'
   condition:
     - condition: time
       weekday:
