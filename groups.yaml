@@ -4,7 +4,8 @@ indoor_lights:
     #- switch.sovrum
     - switch.hall
     - switch.fonsterlampor
-  
+
+
 twilight:
   name: Ljussensor
   entities:
@@ -19,7 +20,8 @@ twilight_off:
   name: Ljussensor av 
   entities:
     - group.twilight
-    - switch.majas_fonsterlampa
+    - switch.barn_fonsterlampa
+    - switch.barn_gran
     - switch.sovrum
       
 twilight_on:
