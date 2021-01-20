@@ -1,4 +1,3 @@
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -10,3 +9,92 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+vacuum:
+  - platform: xiaomi_miio
+    name: Rocky
+    host: !secret rocky_ip
+    token: !secret rocky_token
+
+input_select:
+  vacuum_room_select:
+    name: "Välj ett rum att dammsuga"
+    options:
+      - Köket
+      - Hallen
+      - Korridoren
+      - Vardagsrummet
+      - Sovrummet
+      - Majas
+      - Filips
+      - Hela
+
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433XL_DO3RWCC9-if00-port0
+  debug: true
+
+sensor:
+  platform: rfxtrx
+  automatic_add: true
+  devices:
+    0a520200860100d8290049:
+      name: Ute
+      data_type:
+        - Humidity
+        - Temperature
+    0a520201b60200d8290059:
+      name: Inne
+      data_type:
+        - Humidity
+        - Temperature
+    #0a520202ea0300db280049:
+    0a520201e30300cc340069:
+      name: Källaren
+      data_type:
+        - Humidity
+        - Temperature
+    085007018700008659:
+      name: Garaget
+      data_type:
+        - Temperature
+
+switch:
+  platform: rfxtrx
+  automatic_add: true
+  signal_repetitions: 2
+  devices:
+    0710010e41010050:
+      name: Bil
+    0b11000000a4f18601040f40:
+      name: Bil_bad
+    0b110015008d2f9601010f40:
+      name: Fönsterlampor
+    0b110016008d2f9602010f40:
+      name: Sovrum
+    0b110019008d2f9603010f40:
+      name: Hall
+    0b1100c1003309a20a000050:
+      name: ljussensor
+      fire_event: true
+    0b110035007728de01010f50:
+      name: Barn Fönsterlampa
+    0b11008d007728de02010f50:
+      name: Barn gran
+    0b110090007728de03010f50:
+      name: 1203_3
+    0b11003a008c700a01030050:
+      name: ute_träd
+    0b110041008c700a02000050:
+      name: uterum
+    0b110059008c700a03010f50:
+      name: ute_framsidan
+    #    0b11000424bc0cfe07010f70:
+    #      name: uterum_fast
+    0b11000579bc0cfe01010f70:
+      name: gym
+
+light:
+  platform: rfxtrx
+  devices:
+    0b11000424bc0cfe07010f70:
+      name: Uterum vägglampor

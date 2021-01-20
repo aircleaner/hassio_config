@@ -1,1 +1,53 @@
-[]
+# Automations
+
+- id: "twilight_on"
+  alias: Ljussensor
+  description: ""
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data: { "entity_id": "switch.ljussensor", "state": "on" }
+    #platform: state
+    #to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: group.twilight_on
+
+- id: "twilight_off"
+  alias: Ljussensor
+  description: ""
+  trigger:
+    platform: event
+    event_type: button_pressed
+    event_data: { "entity_id": "switch.ljussensor", "state": "off" }
+  action:
+    service: switch.turn_off
+    entity_id: group.twilight_off
+
+- alias: Dammsug hela huset
+  trigger:
+    - platform: time
+      at: "10:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - wed
+        - fri
+  action:
+    - service: vacuum.start
+
+- alias: Dammsug hallen
+  trigger:
+    - platform: time
+      at: "13:30:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: script.vacuum_hall

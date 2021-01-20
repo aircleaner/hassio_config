@@ -1,0 +1,89 @@
+#https://community.home-assistant.io/t/howto-xiaomi-vacuum-zoned-cleaning/51293
+vacuum_kitchen:
+  alias: "Dammsug köket"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[24290, 15108, 28090, 19408, 1]]
+vacuum_hall:
+  alias: "Dammsug hallen"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[24169, 23236, 27869, 24886, 1]]
+vacuum_hallway:
+  alias: "Dammsug korridoren"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[25899, 19531, 27849, 24581, 1]]
+vacuum_maja:
+  alias: "Dammsug Majas rum"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[28035, 21991, 31985, 25141, 1]]
+vacuum_filip:
+  alias: "Dammsug Filips rum"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[28136, 18878, 32086, 21428, 1]]
+vacuum_bedroom:
+  alias: "Dammsug sovrummet"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[28138, 14173, 32138, 18423, 1]]
+vacuum_livingroom:
+  alias: "Dammsug vardagsrummet"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[23924, 25148, 31724, 28898, 1]]
+vacuum_house:
+  alias: "Dammsug hela huset"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.rocky
+        command: app_zoned_clean
+        params: [[23305, 14750, 32405, 29400, 1]]
+
+vacuum_room:
+  alias: "Starta dammsugning"
+  sequence:
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.vacuum_room_select", "Köket") %}
+            script.vacuum_kitchen
+          {% elif is_state("input_select.vacuum_room_select", "Hallen") %}
+            script.vacuum_hall
+          {% elif is_state("input_select.vacuum_room_select", "Korridoren") %}
+            script.vacuum_hallway
+          {% elif is_state("input_select.vacuum_room_select", "Vardagsrummet") %}
+            script.vacuum_livingroom
+          {% elif is_state("input_select.vacuum_room_select", "Sovrummet") %}
+            script.vacuum_bedroom
+          {% elif is_state("input_select.vacuum_room_select", "Majas") %}
+            script.vacuum_maja
+          {% elif is_state("input_select.vacuum_room_select", "Filips") %}
+            script.vacuum_filip
+          {% elif is_state("input_select.vacuum_room_select", "Hela") %}
+            script.vacuum_house
+          {% endif %}
